@@ -23,15 +23,20 @@ escape::tooltip, [F23] You might wish to not give a command to escape. Could cau
 6:: send, +!6
 7:: send, +!7
 8:: send, +!8
-!1:: send, +!9
-!2:: send, +!q
-!3:: send, +!r
-!4:: send, +!t
-!5:: send, +!y
-!6:: send, +!u
-!7:: send, +!i
-!8:: send, +!o
+^1:: send, +!9
+^2:: send, +!q
+^3:: send, +!r
+^4:: send, +!t
+^5:: send, +!y
+^6:: send, +!u
+^7:: send, +!i
+^8:: send, +!o
 
 
 
-;--------------------------------------------------------------------
+;-------------------------[ TOGGLE ALL AUDIO VDO ]--------------------
+
+
+
+9:: send, ^9 ;AUDIO
+0:: send, ^0 ;VDO
