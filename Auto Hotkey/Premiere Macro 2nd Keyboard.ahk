@@ -8,11 +8,36 @@ F23::return ;this line is mandatory for proper functionality
 
 escape::tooltip, [F23] You might wish to not give a command to escape. Could cause problems. IDK.
 ;escape::return ;<--to disable a key, just use a "return," like so.
-;! = alt
-;+ = SHIFT 
+
+
+
+;--------------------------[ TRANSITION ]---------------------------
+
+
+
+preset(item)
+{
+;send, {Alt down}{e down}{e up}{Alt up}{Alt}
+Sleep, 100
+;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
+RunWait, %comspec% /c echo off | clip
+;Sleep, 50
+RunWait, %comspec% /c C:\InsideClipboard.exe /loadclp %item%, c:\
+;Sleep, 50
+;Send, {Ctrl Down}{v Down}
+;Sleep, 10
+;Send, {Ctrl Up}{v Up}
+;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
+;RunWait, %comspec% /c echo off | clip
+;Sleep, 100
+Return
+}
+
+s::preset("zoomout.clp")
 
 ;--------------------------[ LABEL COLOR ]--------------------------
-
+;! = alt
+;+ = SHIFT 
 
 
 1:: send, +!1
