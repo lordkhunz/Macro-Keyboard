@@ -71,7 +71,7 @@ Sleep, 50
 ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
 RunWait, %comspec% /c echo off | clip
 Sleep, 100
-RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %item%, c:\
+RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %item%, c:\CLP
 Sleep, 50
 send ^v
 Sleep, 100
@@ -80,53 +80,54 @@ RunWait, %comspec% /c echo off | clip
 ;Sleep, 50
 Return
 }
+
 ;;--------------------Single Press--------------------;;
-F1::preset("sound1.clp")
-F2::preset("sound2.clp")
-F3::preset("sound3.clp")
-F4::preset("sound4.clp")
-F5::preset("sound5.clp")
-F6::preset("sound6.clp")
-F7::preset("sound7.clp")
-F8::preset("sound8.clp")
+; F1::preset("sound1.clp")
+; F2::preset("sound2.clp")
+; F3::preset("sound3.clp")
+; F4::preset("sound4.clp")
+; F5::preset("sound5.clp")
+; F6::preset("sound6.clp")
+; F7::preset("sound7.clp")
+; F8::preset("sound8.clp")
 ;F9::preset("")
 ;F10::preset("")
-F11::preset("Goat.clp")
-F12::preset("Titlepopup.clp")
+; F11::preset("Goat.clp")
+; F12::preset("Titlepopup.clp")
 
 ;;--------------------CTRL + Press--------------------;;
-^F1::preset("sound9.clp")
-^F2::preset("sound10.clp")
-^F3::preset("sound11.clp")
-^F4::preset("sound12.clp")
-^F5::preset("sound13.clp")
-^F6::preset("sound14.clp")
-^F7::preset("sound15.clp")
-^F8::preset("sound16.clp")
+; ^F1::preset("sound9.clp")
+; ^F2::preset("sound10.clp")
+; ^F3::preset("sound11.clp")
+; ^F4::preset("sound12.clp")
+; ^F5::preset("sound13.clp")
+; ^F6::preset("sound14.clp")
+; ^F7::preset("sound15.clp")
+; ^F8::preset("sound16.clp")
 ;^F9::preset("")
 ;^F10::preset("")
 ;^F11::preset("")
 ;^F12::preset("")
 
 ;;--------------------SHIFT + Press--------------------;;
-+F1::preset("sound17.clp")
-+F2::preset("sound18.clp")
-+F3::preset("sound19.clp")
-+F4::preset("sound20.clp")
-+F5::preset("sound21.clp")
-+F6::preset("sound22.clp")
-+F7::preset("sound23.clp")
-+F8::preset("sound24.clp")
+; +F1::preset("sound17.clp")
+; +F2::preset("sound18.clp")
+; +F3::preset("sound19.clp")
+; +F4::preset("sound20.clp")
+; +F5::preset("sound21.clp")
+; +F6::preset("sound22.clp")
+; +F7::preset("sound23.clp")
+; +F8::preset("sound24.clp")
 ;+F9::preset("")
 ;+F10::preset("")
 ;+F11::preset("")
 ;+F12::preset("")
 
 ;;--------------------ALT + Press--------------------;;
-!F1::preset("sound25.clp")
-!F2::preset("sound26.clp")
-!F3::preset("sound27.clp")
-!F4::preset("sound28.clp")
+; !F1::preset("sound25.clp")
+; !F2::preset("sound26.clp")
+; !F3::preset("sound27.clp")
+; !F4::preset("sound28.clp")
 ;!F5::preset("")
 ;!F6::preset("")
 ;!F7::preset("")
@@ -138,14 +139,14 @@ F12::preset("Titlepopup.clp")
 
 ;;--------------------[ Color Label ]--------------------;;
 ;`::
-1:: send, +!1
-2:: send, +!2
-3:: send, +!3
-4:: send, +!4
-5:: send, +!5
-6:: send, +!6
-7:: send, +!7
-8:: send, +!8
+1:: send, ^+!1
+2:: send, ^+!2
+3:: send, ^+!3
+4:: send, ^+!4
+5:: send, ^+!5
+6:: send, ^+!6
+7:: send, ^+!7
+8:: send, ^+!8
 ;9::
 ;0::
 ;-::
@@ -154,14 +155,14 @@ F12::preset("Titlepopup.clp")
 
 ;;--------------------[ Color Label with CRTL]--------------------;;
 ;`::
-^1:: send, +!9
-^2:: send, +!q
-^3:: send, +!r
-^4:: send, +!t
-^5:: send, +!y
-^6:: send, +!u
-^7:: send, +!i
-^8:: send, +!o
++1:: send, ^+!q
++2:: send, ^+!w
++3:: send, ^+!e
++4:: send, ^+!r
++5:: send, ^+!t
++6:: send, ^+!y
++7:: send, ^+!u
++8:: send, ^+!i
 ;9::
 ;0::
 ;-::
@@ -171,7 +172,7 @@ F12::preset("Titlepopup.clp")
 ;;--------------------KEYBOARD 2ND ROW--------------------;;
 ;;tab::<----------Do not use this!!
 ;q::
-;w::
+w::preset("slideup.clp")
 ;e::
 ;r::
 ;t::
@@ -185,23 +186,48 @@ F12::preset("Titlepopup.clp")
 ;\::
 ;;capslock::<----------Do not use this!!
 
+debug(message){
+If (message="zoomout.clp"){
+    MsgBox, %message%
+    }
+else if (message="zoomin.clp"){
+    MsgBox, %message%
+    }
+    
+return
+}
+
 ;;--------------------KEYBOARD 3RD ROW--------------------;;
-;a::
+a::preset("slideleft.clp")
 s::preset("zoomout.clp")
-;d::preset("SlideRight.clp")
+d::preset("slideright.clp")
 ;f::
 ;g::
 ;h::
 ;j::
-;K::
+;k::
 ;l::
 ;`;::;for the above line, (semicolon) note that the ` is necessary as an escape character -- and that the syntax highlighting might get it wrong.
 ;'::
 ;enter::tooltip, [F23]  %A_thisHotKey%
 
+;;--------------------KEYBOARD 3RD ROW--------------------;;
+;^a::
++s::preset("zoomin.clp")
+;^d::preset("SlideRight.clp")
+;^f::
+;^g::
+;^h::
+;^j::
+;^K::
+;^l::
+;^`;::;for the above line, (semicolon) note that the ` is necessary as an escape character -- and that the syntax highlighting might get it wrong.
+;^'::
+;^enter::tooltip, [F23]  %A_thisHotKey%
+
 ;;--------------------KEYBOARD 4TH ROW--------------------;;
 ;z::
-;x::
+x::preset("slidedown.clp")
 ;c::
 ;v::
 ;b::
@@ -212,3 +238,4 @@ s::preset("zoomout.clp")
 ;/::
 
 
+#e::debug("zoomin.clp")
