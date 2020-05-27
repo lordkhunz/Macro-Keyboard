@@ -148,37 +148,29 @@ F12::preset("Titlepopup.clp")
 ;!F11::preset("")
 ;!F12::preset("")
 
-;;--------------------[ Color Label ]--------------------;;
-;`::
-F24:: send, ^+!1
-2:: send, ^+!2
-3:: send, ^+!3
-4:: send, ^+!4
-5:: send, ^+!5
-6:: send, ^+!6
-7:: send, ^+!7
-8:: send, ^+!8
-;9::
-;0::
-;-::
-;=::
-;backspace::<----------Do not use this!!
-
-;;--------------------[ Color Label with CRTL]--------------------;;
-;`::
-+1:: send, ^+!q
-+2:: send, ^+!w
-+3:: send, ^+!e
-+4:: send, ^+!r
-+5:: send, ^+!t
-+6:: send, ^+!y
-+7:: send, ^+!u
-+8:: send, ^+!i
-;9::
-;0::
-;-::
-;=::
-;backspace::<----------Do not use this!!
+; ;;--------------------[ Color Label ]--------------------;;
+; ;`::
+; ^F13:: send, ^+!1
+; ^F14:: send, ^+!2
+; ^F15:: send, ^+!3
+; ^F16:: send, ^+!4
+; ^F17:: send, ^+!5
+; ^F18:: send, ^+!6
+; ^F19:: send, ^+!7
+; ^F20:: send, ^+!8
+; ^+F13:: send, ^+!q
+; ^+F14:: send, ^+!w
+; ^+F15:: send, ^+!e
+; ^+F16:: send, ^+!r
+; ^+F17:: send, ^+!t
+; ^+F18:: send, ^+!y
+; ^+F19:: send, ^+!u
+; ^+F20:: send, ^+!i
+; ;9::
+; ;0::
+; ;-::
+; ;=::
+; ;backspace::<----------Do not use this!!
 
 ;;--------------------KEYBOARD 2ND ROW--------------------;;
 ;;tab::<----------Do not use this!!
