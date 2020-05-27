@@ -58,8 +58,19 @@ SendMode Input
 ;;;WARNING - THIS IS KINDA UNTESTED SINCE I STOPPED USING IT. LET ME KNOW IF YOU HAVE ANY ISSUES, BY LEAVING A GITHUB... ISSUE.  https://github.com/TaranVH/2nd-keyboard/issues
 
 
-#if (getKeyState("F23", "P")) ;<--Everything after this line will only happen on the secondary keyboard that uses F23.
-F23::return ;this line is mandatory for proper functionality
+; debug(message){
+; If (message="zoomout.clp"){
+;     MsgBox, %message%
+;     }
+; else if (message="zoomin.clp"){
+;     MsgBox, %message%
+;     }
+    
+; return
+; }
+
+;#if (getKeyState("F23", "P")) ;<--Everything after this line will only happen on the secondary keyboard that uses F23.
+;F23::return ;this line is mandatory for proper functionality
 
 escape::tooltip, [F23] You might wish to not give a command to escape. Could cause problems. IDK.
 ;escape::return ;<--to disable a key, just use a "return," like so.
@@ -139,7 +150,7 @@ F12::preset("Titlepopup.clp")
 
 ;;--------------------[ Color Label ]--------------------;;
 ;`::
-1:: send, ^+!1
+F24:: send, ^+!1
 2:: send, ^+!2
 3:: send, ^+!3
 4:: send, ^+!4
@@ -186,16 +197,6 @@ w::preset("slideup.clp")
 ;\::
 ;;capslock::<----------Do not use this!!
 
-debug(message){
-If (message="zoomout.clp"){
-    MsgBox, %message%
-    }
-else if (message="zoomin.clp"){
-    MsgBox, %message%
-    }
-    
-return
-}
 
 ;;--------------------KEYBOARD 3RD ROW--------------------;;
 a::preset("slideleft.clp")
@@ -236,6 +237,3 @@ x::preset("slidedown.clp")
 ;,::
 ;.::
 ;/::
-
-
-#e::debug("zoomin.clp")
