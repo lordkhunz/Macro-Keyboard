@@ -148,30 +148,6 @@ F12::preset("Titlepopup.clp")
 ;!F11::preset("")
 ;!F12::preset("")
 
-; ;;--------------------[ Color Label ]--------------------;;
-; ;`::
-; ^F13:: send, ^+!1
-; ^F14:: send, ^+!2
-; ^F15:: send, ^+!3
-; ^F16:: send, ^+!4
-; ^F17:: send, ^+!5
-; ^F18:: send, ^+!6
-; ^F19:: send, ^+!7
-; ^F20:: send, ^+!8
-; ^+F13:: send, ^+!q
-; ^+F14:: send, ^+!w
-; ^+F15:: send, ^+!e
-; ^+F16:: send, ^+!r
-; ^+F17:: send, ^+!t
-; ^+F18:: send, ^+!y
-; ^+F19:: send, ^+!u
-; ^+F20:: send, ^+!i
-; ;9::
-; ;0::
-; ;-::
-; ;=::
-; ;backspace::<----------Do not use this!!
-
 ;;--------------------KEYBOARD 2ND ROW--------------------;;
 ;;tab::<----------Do not use this!!
 ;q::
