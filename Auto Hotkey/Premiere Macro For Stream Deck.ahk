@@ -28,3 +28,4 @@ send, {Alt down}{Shift down}{F1 down}{F1 up}{Alt up}{Shift Up} ;This line for se
 ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
 RunWait, %comspec% /c echo off | clip ;This line for clear clipboard
 }
+
