@@ -12,35 +12,35 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Transition(item)
 {
     send, +3
-    Sleep, 100
+    Sleep, 150
     send, ^+a
-    Sleep, 100
+    Sleep, 150
     send, {Alt down}{e down}{e up}{e down}{e up}{Alt up} ;Reload clipboard.
-    Sleep, 100
+    Sleep, 150
     send, {Alt down}{Shift down}{F12 down}{F12 up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
-    Sleep, 100
+    Sleep, 150
     send, {Alt down}{Shift down}{F4 down} ;Select highlight vdo track 4.
-    Sleep, 100
+    Sleep, 150
     send, {F4 up}{Alt up}{Shift Up} ;Select highlight vdo track 4.
-    Sleep, 100
+    Sleep, 150
     send, {Ctrl down}{Shift down}{F12 down}{F12 up}{Ctrl up}{Shift Up} ;Deselect highlight all sound track.
-    Sleep,100
+    Sleep, 150
     send, {Ctrl down}{Shift down}{F4 down}{F4 up}{Ctrl up}{Shift Up} ;Select highlight sound track 4.
-    Sleep, 100
+    Sleep, 150
     RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %item%, c:\CLP ;load file clp.
-    Sleep, 100
+    Sleep, 150
     send ^v ;Paste clipboard.
-    Sleep, 100
+    Sleep, 150
     send, {Alt down}{Shift down} ;Deselect highlight vdo track 4.
-    Sleep, 100
+    Sleep, 150
     send, {F4 down}{F4 up}{Alt up}{Shift Up} ;Deselect highlight vdo track 4.
-    Sleep,100
+    Sleep, 150
     send, {Ctrl down}{Shift down}{F4 down}{F4 up}{Ctrl up}{Shift Up} ;Deselect highlight sound track 4.
-    Sleep, 100
+    Sleep, 150
     send, {Ctrl down}{Shift down}{F12 down}{F12 up}{Ctrl up}{Shift Up} ;Select highlight all sound track.
-    Sleep, 100
+    Sleep, 150
     send, {Alt down}{Shift down}{F1 down}{F1 up}{Alt up}{Shift Up} ;Select highlight vdo track 1.
-    Sleep, 100
+    Sleep, 150
     ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
     RunWait, %comspec% /c echo off | clip ;Clear clipboard.
     }
