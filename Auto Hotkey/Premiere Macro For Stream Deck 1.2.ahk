@@ -9,39 +9,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;This is first function.
 
-Transition(item)
-{
-    send, +3
-    Sleep, 150
-    send, ^+a
-    Sleep, 150
-    send, {Alt down}{e down}{e up}{e down}{e up}{Alt up} ;Reload clipboard.
-    Sleep, 150
-    send, {Alt down}{Shift down}{o down}{o up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
-    Sleep, 150
-    send, {Alt down}{Shift down}{i down}{i up}{Alt up}{Shift Up} ;Select highlight vdo track 4.
-    Sleep, 150
-    send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Deselect highlight all sound track.
-    Sleep, 150
-    send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Select highlight sound track 4.
-    Sleep, 150
-    RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %item%, c:\CLP ;load file clp.
-    Sleep, 150
-    send ^v ;Paste clipboard.
-    Sleep, 150
-    send, {Alt down}{Shift down}{i down}{i up}{Alt up}{Shift Up} ;Deselect highlight vdo track 4.
-    Sleep, 150
-    send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Deselect highlight sound track 4.
-    Sleep, 150
-    send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Select highlight all sound track.
-    Sleep, 150
-    send, {Alt down}{Shift down}{q down}{q up}{Alt up}{Shift Up} ;Select highlight vdo track 1.
-    Sleep, 150
-    ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
-    RunWait, %comspec% /c echo off | clip ;Clear clipboard.
-    }
-
-
 ; F24::Transition("ZoomOut.clp")
 ; !+[::Transition("ZoomIn.clp")
 ; !+-::Transition("SlideUp.clp")
@@ -89,6 +56,65 @@ Transition(item)
 ; F19::SoundFx("Cat2.clp")
 ; F20::SoundFx("Cat3.clp")
 
+Transition(a, b, c) ;(.clpname, delay, "buttom")
+{
+    ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
+    ifWinActive, ahk_exe Adobe Premiere Pro.exe
+    {
+        send, +3
+        Sleep, %b%
+        send, ^+a
+        Sleep, %b%
+        send, {Alt down}{e down}{e up}{e down}{e up}{Alt up} ;Reload clipboard.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{o down}{o up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Deselect highlight all sound track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Select highlight sound track 8.
+        Sleep, %b%
+        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:\CLP ;load file clp.
+        Sleep, %b%
+        send ^v ;Paste clipboard.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Deselect highlight sound track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Select highlight all sound track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{q down}{q up}{Alt up}{Shift Up} ;Select highlight vdo track 1.
+        Sleep, %b%
+        ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
+        RunWait, %comspec% /c echo off | clip ;Clear clipboard.
+        return
+    }else{
+        msgbox, 0, Alert!!!, เปิด Premiere Pro ก่อนที่จะใช้ %a%, 10
+        return
+    }
+}
+
+SecondFunction(a)
+{
+    ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
+    ifWinActive, ahk_exe Adobe Premiere Pro.exe
+    {
+        sleep, 10
+        send, +3
+        sleep, 100#
+        MsgBox, 0, Custom, %a%, 1
+        return
+    }else{
+        msgbox, 0, OPEN PR BITCH!, %a%, 10
+        return
+    }
+}
+
+
+
+
 F1::
 F2::
 F3::
@@ -112,24 +138,24 @@ F20::
 F21::
 F22::
 F23::
-F24::Transition("ZoomOut.clp")
-<^F1::
-<^F2::
-<^F3::
-<^F4::
-<^F5::
-<^F6::
-<^F7::
-<^F8::
-<^F9::
-<^F10::
-<^F11::
-<^F12::
-<^F13::
-<^F14::
-<^F15::
-<^F16::
-<^F17::
+F24::
+<^F1::Transition("ZoomOut.clp", 150, "i")
+<^F2::Transition("ZoomIn.clp", 150, "i")
+<^F3::Transition("SlideUp.clp", 150, "i")
+<^F4::Transition("SlideDown.clp", 150, "i")
+<^F5::Transition("SlideLeft.clp", 150, "i")
+<^F6::Transition("SlideRight.clp", 150, "i")
+<^F7::Transition("SlideTopLeft.clp", 150, "i")
+<^F8::Transition("SlideTopRight.clp", 150, "i")
+<^F9::Transition("SlideBottomLeft.clp", 150, "i")
+<^F10::Transition("SlideBottomRight.clp", 150, "i")
+<^F11::Transition("CrossSpin.clp", 150, "i")
+<^F12::Transition("FilmRoll.clp", 150, "i")
+<^F13::Transition("LensDisortion.clp", 150, "i")
+<^F14::Transition("LumaFade.clp", 150, "i")
+<^F15::Transition("Mosaic.clp", 150, "i")
+<^F16::Transition("SpinClockwise.clp", 150, "i")
+<^F17::Transition("SpinCounterClockwise.clp", 150, "i")
 <^F18::
 <^F19::
 <^F20::
