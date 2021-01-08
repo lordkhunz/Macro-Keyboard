@@ -1474,46 +1474,46 @@ F24::
 >^<!<+>+F14::Animetion("BWSmoke18.clp", 150, "\CLP\Animation\Smoke\BW")
 >^<!<+>+F15::Animetion("BWSmoke19.clp", 150, "\CLP\Animation\Smoke\BW")
 >^<!<+>+F16::Animetion("BWSmoke20.clp", 150, "\CLP\Animation\Smoke\BW")
->^<!<+>+F17::
->^<!<+>+F18::
->^<!<+>+F19::
->^<!<+>+F20::
->^<!<+>+F21::
->^<!<+>+F22::
->^<!<+>+F23::
->^<!<+>+F24::
->^>!<+>+F1::
->^>!<+>+F2::
->^>!<+>+F3::
->^>!<+>+F4::
->^>!<+>+F5::
->^>!<+>+F6::
->^>!<+>+F7::
->^>!<+>+F8::
->^>!<+>+F9::
->^>!<+>+F10::
->^>!<+>+F11::
->^>!<+>+F12::
->^>!<+>+F13::
->^>!<+>+F14::
->^>!<+>+F15::
->^>!<+>+F16::
->^>!<+>+F17::
->^>!<+>+F18::
->^>!<+>+F19::
->^>!<+>+F20::
->^>!<+>+F21::
->^>!<+>+F22::
->^>!<+>+F23::
->^>!<+>+F24::
-<!>!<+>+F1::
-<!>!<+>+F2::
-<!>!<+>+F3::
-<!>!<+>+F4::
-<!>!<+>+F5::
-<!>!<+>+F6::
-<!>!<+>+F7::
-<!>!<+>+F8::
+>^<!<+>+F17::Animetion("Electric01.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F18::Animetion("Electric02.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F19::Animetion("Electric03.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F20::Animetion("Electric04.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F21::Animetion("Electric05.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F22::Animetion("Electric06.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F23::Animetion("Electric07.clp", 150, "\CLP\Animation\Electric")
+>^<!<+>+F24::Animetion("Electric08.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F1::Animetion("Electric09.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F2::Animetion("Electric10.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F3::Animetion("Electric11.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F4::Animetion("Electric12.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F5::Animetion("Electric13.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F6::Animetion("Electric14.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F7::Animetion("Electric15.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F8::Animetion("Electric16.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F9::Animetion("Electric17.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F10::Animetion("Electric18.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F11::Animetion("Electric19.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F12::Animetion("Electric20.clp", 150, "\CLP\Animation\Electric")
+>^>!<+>+F13::Animetion("BWElectric01.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F14::Animetion("BWElectric02.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F15::Animetion("BWElectric03.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F16::Animetion("BWElectric04.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F17::Animetion("BWElectric05.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F18::Animetion("BWElectric06.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F19::Animetion("BWElectric07.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F20::Animetion("BWElectric08.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F21::Animetion("BWElectric09.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F22::Animetion("BWElectric10.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F23::Animetion("BWElectric11.clp", 150, "\CLP\Animation\Electric\BW")
+>^>!<+>+F24::Animetion("BWElectric12.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F1::Animetion("BWElectric13.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F2::Animetion("BWElectric14.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F3::Animetion("BWElectric15.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F4::Animetion("BWElectric16.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F5::Animetion("BWElectric17.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F6::Animetion("BWElectric18.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F7::Animetion("BWElectric19.clp", 150, "\CLP\Animation\Electric\BW")
+<!>!<+>+F8::Animetion("BWElectric20.clp", 150, "\CLP\Animation\Electric\BW")
 <!>!<+>+F9::
 <!>!<+>+F10::
 <!>!<+>+F11::
