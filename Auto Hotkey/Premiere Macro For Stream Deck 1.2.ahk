@@ -56,7 +56,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; F19::SoundFx("Cat2.clp")
 ; F20::SoundFx("Cat3.clp")
 
-Transition(a, b, c) ;(.clpname, delay, "buttom")
+Transition(a, b, c) ;(.clpname, Delay, Direction)
 {
     ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
     ifWinActive, ahk_exe Adobe Premiere Pro.exe
@@ -69,17 +69,17 @@ Transition(a, b, c) ;(.clpname, delay, "buttom")
         Sleep, %b%
         send, {Alt down}{Shift down}{o down}{o up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
         Sleep, %b%
-        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
+        send, {Alt down}{Shift down}{i down}{i up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
         Sleep, %b%
         send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Deselect highlight all sound track.
         Sleep, %b%
         send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Select highlight sound track 8.
         Sleep, %b%
-        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:\CLP ;load file clp.
+        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:%c% ;load file clp.
         Sleep, %b%
         send ^v ;Paste clipboard.
         Sleep, %b%
-        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
+        send, {Alt down}{Shift down}{i down}{i up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
         Sleep, %b%
         send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Deselect highlight sound track 8.
         Sleep, %b%
@@ -97,7 +97,7 @@ Transition(a, b, c) ;(.clpname, delay, "buttom")
 }
 
 
-Transition(a, b, c) ;(.clpname, delay, "buttom")
+Animetion(a, b, c) ;(.clpname, delay, Direction)
 {
     ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
     ifWinActive, ahk_exe Adobe Premiere Pro.exe
@@ -110,19 +110,19 @@ Transition(a, b, c) ;(.clpname, delay, "buttom")
         Sleep, %b%
         send, {Alt down}{Shift down}{o down}{o up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
         Sleep, %b%
-        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
+        send, {Alt down}{Shift down}{u down}{u up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
         Sleep, %b%
         send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Deselect highlight all sound track.
         Sleep, %b%
-        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Select highlight sound track 8.
+        send, {Alt down}{Shift down}{7 down}{7 up}{Alt up}{Shift Up} ;Select highlight sound track 8.
         Sleep, %b%
-        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:\CLP ;load file clp.
+        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:%c% ;load file clp.
         Sleep, %b%
         send ^v ;Paste clipboard.
         Sleep, %b%
-        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
+        send, {Alt down}{Shift down}{u down}{u up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
         Sleep, %b%
-        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Deselect highlight sound track 8.
+        send, {Alt down}{Shift down}{7 down}{7 up}{Alt up}{Shift Up} ;Deselect highlight sound track 8.
         Sleep, %b%
         send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Select highlight all sound track.
         Sleep, %b%
@@ -154,7 +154,12 @@ SecondFunction(a)
     }
 }
 
-
+; 1 = LCtrl <^
+; 2 = Rctrl >^
+; 3 = Lalt <!
+; 4 = Ralt >!
+; 5 = LShift <+
+; 6 = Rshift >+
 
 
 F1::
@@ -181,23 +186,23 @@ F21::
 F22::
 F23::
 F24::
-<^F1::Transition("ZoomOut.clp", 150, "i")
-<^F2::Transition("ZoomIn.clp", 150, "i")
-<^F3::Transition("SlideUp.clp", 150, "i")
-<^F4::Transition("SlideDown.clp", 150, "i")
-<^F5::Transition("SlideLeft.clp", 150, "i")
-<^F6::Transition("SlideRight.clp", 150, "i")
-<^F7::Transition("SlideTopLeft.clp", 150, "i")
-<^F8::Transition("SlideTopRight.clp", 150, "i")
-<^F9::Transition("SlideBottomLeft.clp", 150, "i")
-<^F10::Transition("SlideBottomRight.clp", 150, "i")
-<^F11::Transition("CrossSpin.clp", 150, "i")
-<^F12::Transition("FilmRoll.clp", 150, "i")
-<^F13::Transition("LensDisortion.clp", 150, "i")
-<^F14::Transition("LumaFade.clp", 150, "i")
-<^F15::Transition("Mosaic.clp", 150, "i")
-<^F16::Transition("SpinClockwise.clp", 150, "i")
-<^F17::Transition("SpinCounterClockwise.clp", 150, "i")
+<^F1::Transition("ZoomOut.clp", 150, "\CLP")
+<^F2::Transition("ZoomIn.clp", 150, "\CLP")
+<^F3::Transition("SlideUp.clp", 150, "\CLP")
+<^F4::Transition("SlideDown.clp", 150, "\CLP")
+<^F5::Transition("SlideLeft.clp", 150, "\CLP")
+<^F6::Transition("SlideRight.clp", 150, "\CLP")
+<^F7::Transition("SlideTopLeft.clp", 150, "\CLP")
+<^F8::Transition("SlideTopRight.clp", 150, "\CLP")
+<^F9::Transition("SlideBottomLeft.clp", 150, "\CLP")
+<^F10::Transition("SlideBottomRight.clp", 150, "\CLP")
+<^F11::Transition("CrossSpin.clp", 150, "\CLP")
+<^F12::Transition("FilmRoll.clp", 150, "\CLP")
+<^F13::Transition("LensDisortion.clp", 150, "\CLP")
+<^F14::Transition("LumaFade.clp", 150, "\CLP")
+<^F15::Transition("Mosaic.clp", 150, "\CLP")
+<^F16::Transition("SpinClockwise.clp", 150, "\CLP")
+<^F17::Transition("SpinCounterClockwise.clp", 150, "\CLP")
 <^F18::
 <^F19::
 <^F20::
@@ -1427,48 +1432,48 @@ F24::
 >^<!>!<+F20::
 >^<!>!<+F21::
 >^<!>!<+F22::
->^<!>!<+F23::
->^<!>!<+F24::
->^<!>!>+F1::
->^<!>!>+F2::
->^<!>!>+F3::
->^<!>!>+F4::
->^<!>!>+F5::
->^<!>!>+F6::
->^<!>!>+F7::
->^<!>!>+F8::
->^<!>!>+F9::
->^<!>!>+F10::
->^<!>!>+F11::
->^<!>!>+F12::
->^<!>!>+F13::
->^<!>!>+F14::
->^<!>!>+F15::
->^<!>!>+F16::
->^<!>!>+F17::
->^<!>!>+F18::
->^<!>!>+F19::
->^<!>!>+F20::
->^<!>!>+F21::
->^<!>!>+F22::
->^<!>!>+F23::
->^<!>!>+F24::
->^<!<+>+F1::
->^<!<+>+F2::
->^<!<+>+F3::
->^<!<+>+F4::
->^<!<+>+F5::
->^<!<+>+F6::
->^<!<+>+F7::
->^<!<+>+F8::
->^<!<+>+F9::
->^<!<+>+F10::
->^<!<+>+F11::
->^<!<+>+F12::
->^<!<+>+F13::
->^<!<+>+F14::
->^<!<+>+F15::
->^<!<+>+F16::
+>^<!>!<+F23::Animetion("Smoke01.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!<+F24::Animetion("Smoke02.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F1::Animetion("Smoke03.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F2::Animetion("Smoke04.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F3::Animetion("Smoke05.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F4::Animetion("Smoke06.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F5::Animetion("Smoke07.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F6::Animetion("Smoke08.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F7::Animetion("Smoke09.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F8::Animetion("Smoke10.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F9::Animetion("Smoke11.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F10::Animetion("Smoke12.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F11::Animetion("Smoke13.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F12::Animetion("Smoke14Top.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F13::Animetion("Smoke14Under.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F14::Animetion("Smoke15.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F15::Animetion("Smoke16.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F16::Animetion("Smoke17.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F17::Animetion("Smoke18.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F18::Animetion("Smoke19.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F19::Animetion("Smoke20.clp", 150, "\CLP\Animation\Smoke")
+>^<!>!>+F20::Animetion("BWSmoke01.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!>!>+F21::Animetion("BWSmoke02.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!>!>+F22::Animetion("BWSmoke03.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!>!>+F23::Animetion("BWSmoke04.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!>!>+F24::Animetion("BWSmoke05.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F1::Animetion("BWSmoke06.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F2::Animetion("BWSmoke07.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F3::Animetion("BWSmoke08.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F4::Animetion("BWSmoke09.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F5::Animetion("BWSmoke10.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F6::Animetion("BWSmoke11.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F7::Animetion("BWSmoke12.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F8::Animetion("BWSmoke13.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F9::Animetion("BWSmoke14Top.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F10::Animetion("BWSmoke14Under.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F11::Animetion("BWSmoke15.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F12::Animetion("BWSmoke16.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F13::Animetion("BWSmoke17.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F14::Animetion("BWSmoke18.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F15::Animetion("BWSmoke19.clp", 150, "\CLP\Animation\Smoke\BW")
+>^<!<+>+F16::Animetion("BWSmoke20.clp", 150, "\CLP\Animation\Smoke\BW")
 >^<!<+>+F17::
 >^<!<+>+F18::
 >^<!<+>+F19::
