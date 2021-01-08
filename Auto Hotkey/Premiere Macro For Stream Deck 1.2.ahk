@@ -96,6 +96,48 @@ Transition(a, b, c) ;(.clpname, delay, "buttom")
     }
 }
 
+
+Transition(a, b, c) ;(.clpname, delay, "buttom")
+{
+    ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
+    ifWinActive, ahk_exe Adobe Premiere Pro.exe
+    {
+        send, +3
+        Sleep, %b%
+        send, ^+a
+        Sleep, %b%
+        send, {Alt down}{e down}{e up}{e down}{e up}{Alt up} ;Reload clipboard.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{o down}{o up}{Alt up}{Shift Up} ;Deselect highlight vdo track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Select highlight vdo track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Deselect highlight all sound track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Select highlight sound track 8.
+        Sleep, %b%
+        RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %a%, c:\CLP ;load file clp.
+        Sleep, %b%
+        send ^v ;Paste clipboard.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{%c% down}{%c% up}{Alt up}{Shift Up} ;Deselect highlight vdo track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{8 down}{8 up}{Alt up}{Shift Up} ;Deselect highlight sound track 8.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{9 down}{9 up}{Alt up}{Shift Up} ;Select highlight all sound track.
+        Sleep, %b%
+        send, {Alt down}{Shift down}{q down}{q up}{Alt up}{Shift Up} ;Select highlight vdo track 1.
+        Sleep, %b%
+        ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
+        RunWait, %comspec% /c echo off | clip ;Clear clipboard.
+        return
+    }else{
+        msgbox, 0, Alert!!!, เปิด Premiere Pro ก่อนที่จะใช้ %a%, 10
+        return
+    }
+}
+
+
 SecondFunction(a)
 {
     ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
