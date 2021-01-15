@@ -7,54 +7,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;And work for F13-F24 and can combine with Alt Shift and CTRL key
 ;Design By LordKhunz
 
-;This is first function.
-
-; F24::Transition("ZoomOut.clp")
-; !+[::Transition("ZoomIn.clp")
-; !+-::Transition("SlideUp.clp")
-; !+;::Transition("SlideDown.clp")
-; !+p::Transition("SlideLeft.clp")
-; !+]::Transition("SlideRight.clp")
-; !+0::Transition("SlideTopLeft.clp")
-; !+=::Transition("SlideTopRight.clp")
-; !+l::Transition("SlideBottomLeft.clp")
-; !+'::Transition("SlideBottomRight.clp")
-
-;This is second function.
-
-; SoundFx(item)
-; {
-;     send, +3 ;Select timeline.
-;     Sleep, 150
-;     send, ^+a ;Deselect any thing.
-;     Sleep, 150
-;     send, {Alt down}{e down}{e up}{e down}{e up}{Alt up} ;Reload clipboard.
-;     Sleep, 150
-;     send, {Ctrl down}{Shift down}{F12 down}{F12 up}{Ctrl up}{Shift Up} ;Deselect highlight all sound track.
-;     Sleep, 150
-;     send, {Ctrl down}{Shift down}{F5 down}{F5 up}{Ctrl up}{Shift Up} ;Select highlight sound track 5.
-;     Sleep, 150
-;     RunWait, %comspec% /c C:\CLP\InsideClipboard.exe /loadclp %item%, c:\CLP ;load file clp.
-;     Sleep, 150
-;     send ^v ;Paste clipboard.
-;     Sleep, 150
-;     send, {Ctrl down}{Shift down}{F5 down}{F5 up}{Ctrl up}{Shift Up} ;Deselect highlight sound track 5.
-;     Sleep, 150
-;     send, {Ctrl down}{Shift down}{F12 down}{F12 up}{Ctrl up}{Shift Up} ;Select highlight all sound track.
-;     Sleep, 150
-;     ;Run, C:\Users\iamkh\Desktop\clear.exe.lnk, /c echo.|clip
-;     RunWait, %comspec% /c echo off | clip ;Clear clipboard.
-; }
-
-
-; F13::SoundFx("Sheep1.clp")
-; F14::SoundFx("Sheep2.clp")
-; F15::SoundFx("Sheep3.clp")
-; F16::SoundFX("Duck1.clp")
-; F17::SoundFx("Duck2.clp")
-; F18::SoundFx("Cat1.clp")
-; F19::SoundFx("Cat2.clp")
-; F20::SoundFx("Cat3.clp")
 
 Transition(a, b, c) ;(.clpname, Delay, Direction)
 {
@@ -91,7 +43,7 @@ Transition(a, b, c) ;(.clpname, Delay, Direction)
         RunWait, %comspec% /c echo off | clip ;Clear clipboard.
         return
     }else{
-        msgbox, 0, Alert!!!, เปิด Premiere Pro ก่อนที่จะใช้ %a%, 10
+        
         return
     }
 }
@@ -132,26 +84,40 @@ Animetion(a, b, c) ;(.clpname, delay, Direction)
         RunWait, %comspec% /c echo off | clip ;Clear clipboard.
         return
     }else{
-        msgbox, 0, Alert!!!, เปิด Premiere Pro ก่อนที่จะใช้ %a%, 10
+        
         return
     }
 }
 
-
-SecondFunction(a)
+InserFXFunction(a, b , c) ;(Effect name, x Position, y Position)
 {
     ;#IfWinActive ahk_exe Adobe Premiere Pro.exe
     ifWinActive, ahk_exe Adobe Premiere Pro.exe
     {
-        sleep, 10
-        send, +3
-        sleep, 100#
-        MsgBox, 0, Custom, %a%, 1
-        return
+        Sleep, 100
+        send, +7
+        Sleep, 100
+        MouseGetPos, xpos, ypos
+        Sleep, 100
+        ControlGetpos, X,  Y, Width, Height, DroverLord - Window Class46, ahk_class Premiere Pro ;class will change every time when change work space.
+        ;MsgBox, 0, Custom, %a% %xpos% %ypos%, 1
+        Sleep, 100
+        MouseMove, x+20, y+15, 0
+        Sleep, 100
+        MouseClick, Left, , ,1
+        Sleep, 100
+        Send, {backspace}
+        Sleep, 100
+        Send,  %a%
+        Sleep, 100
+        MouseMove, %b%, %c%, 0, R
+        Sleep, 100
+        MouseClickDrag, Left, , , %xpos%, %ypos%,0
     }else{
-        msgbox, 0, OPEN PR BITCH!, %a%, 10
-        return
+
     }
+    return
+
 }
 
 ; 1 = LCtrl <^
@@ -355,16 +321,16 @@ F24::
 <^>^F22::
 <^>^F23::
 <^>^F24::
-<^<!F1::
-<^<!F2::
-<^<!F3::
-<^<!F4::
-<^<!F5::
-<^<!F6::
-<^<!F7::
-<^<!F8::
-<^<!F9::
-<^<!F10::
+<^<!F1::InserFXFunction("-Lens Distortion Preset", 55, 45)
+<^<!F2::InserFXFunction("Warp Stabilizer", 55, 145)
+<^<!F3::InserFXFunction("Camera Blur", 55, 145)
+<^<!F4::InserFXFunction("Directional Blur", 55, 145)
+<^<!F5::InserFXFunction("lumetri Color", 55, 145)
+<^<!F6::InserFXFunction("Transform", 55, 145)
+<^<!F7::InserFXFunction("Crop", 55, 145)
+<^<!F8::InserFXFunction("Horizontal Flip", 55, 145)
+<^<!F9::InserFXFunction("Vertical Flip", 55, 145)
+<^<!F10::InserFXFunction("Dynamics", 55, 105)
 <^<!F11::
 <^<!F12::
 <^<!F13::
