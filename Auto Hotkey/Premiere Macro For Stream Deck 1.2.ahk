@@ -331,7 +331,7 @@ F24::
 <^<!F8::InserFXFunction("Horizontal Flip", 55, 145)
 <^<!F9::InserFXFunction("Vertical Flip", 55, 145)
 <^<!F10::InserFXFunction("Dynamics", 55, 105)
-<^<!F11::
+<^<!F11::InserFXFunction("Basic 3D", 55, 145)
 <^<!F12::
 <^<!F13::
 <^<!F14::
